@@ -1,0 +1,26 @@
+import React, { useState } from 'react';
+
+function ColorToggleButton() {
+  const [isBlue, setIsBlue] = useState(true);
+
+  const toggleColor = () => {
+    setIsBlue(prevState => !prevState);
+  };
+
+  return (
+    <button
+      onClick={toggleColor}
+      style={{
+        backgroundColor: isBlue ? 'blue' : 'red',
+        color: 'white',
+        padding: '10px 20px',
+        border: 'none',
+        borderRadius: '5px',
+      }}
+    >
+      Color: {isBlue ? 'Blue' : 'Red'}
+    </button>
+  );
+}
+
+export default ColorToggleButton;
